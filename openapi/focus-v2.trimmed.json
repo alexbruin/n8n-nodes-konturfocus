@@ -1,0 +1,3170 @@
+{
+  "info": {
+    "title": "Фокус API",
+    "version": "3.0"
+  },
+  "paths": {
+    "/api3/accountingReports": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Формы бухгалтерской отчетности (/api3/accountingReports)",
+        "operationId": "Api3AccountingReports",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/allPeps": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Полный список публичных должностных лиц (/api3/allPeps)",
+        "operationId": "Api3AllPeps",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/purchasesOfCustomer": {
+      "get": {
+        "tag": "Закупки и РНП",
+        "summary": "Закупки заказчика (/api3/purchasesOfCustomer)",
+        "operationId": "Api3AllPurchasesOfCustomer",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 1
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/purchasesOfParticipant": {
+      "get": {
+        "tag": "Закупки и РНП",
+        "summary": "Закупки участника (/api3/purchasesOfParticipant)",
+        "operationId": "Api3AllPurchasesOfParticipant",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 1
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/analyticLists": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Вхождение организации в реестры (/api3/analyticLists)",
+        "operationId": "Api3AnalyticLists",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/analytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Расширенная аналитика (/api3/analytics)",
+        "operationId": "Api3Analytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/bankAccounts": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Банки, в которых ранее были найдены счета организации (/api3/bankAccounts)",
+        "operationId": "Api3BankAccounts",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/bankGuarantees": {
+      "get": {
+        "tag": "Закупки и РНП",
+        "summary": "Банковские гарантии (/api3/bankGuarantees)",
+        "operationId": "Api3BankGuarantees",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 1000 записей параметр можно не указывать. Для получения второй 1000 необходимо указать skip=1000 и так далее",
+            "type": "integer",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/bankruptcyAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Признаки банкротства (/api3/bankruptcyAnalytics)",
+        "operationId": "Api3BankruptcyAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/beneficialOwners": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Конечные владельцы (/api3/beneficialOwners)",
+        "operationId": "Api3BeneficialOwners",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/briefReport": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Экспресс-отчет по контрагенту (/api3/briefReport)",
+        "operationId": "Api3BriefReport",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "Экспресс-отчет в формате XML. При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "pdf",
+            "description": "Экспресс-отчет в формате PDF. При значении true возвращает ответ в формате pdf. Значение по умолчанию: false",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/buh": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Показатели бухгалтерской отчетности (/api3/buh)",
+        "operationId": "Api3Buh",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/by/companyDetails": {
+      "get": {
+        "tag": "Базовые реквизиты компаний СНГ",
+        "summary": "Данные по компаниям Беларуси (/api3/by/companyDetails)",
+        "operationId": "Api3ByCompanyDetails",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "unp",
+            "description": "УНП организации. Максимально можно указать 100 УНП через запятую. Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/checkPassport": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Проверка паспортов (/api3/checkPassport)",
+        "operationId": "Api3CheckPassport",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "passportNumber",
+            "description": "Серия и номер паспорта. Нет возможности делать несколько запросов в одной строке",
+            "type": "array",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/cnCompanyGetStatus": {
+      "get": {
+        "tag": "Данные по компаниям из КНР",
+        "summary": "Метод получения статуса задачи и данных по компании из КНР (/api3/cnCompanyGetStatus)",
+        "operationId": "Api3ChinaCompanyGetStatus",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "taskId",
+            "description": "Идентификатор задачи. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false.",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/cnCompanySendToCheck": {
+      "get": {
+        "tag": "Данные по компаниям из КНР",
+        "summary": "Отправка запроса на проверку компании из КНР (/api3/cnCompanySendToCheck)",
+        "operationId": "Api3ChinaCompanySendToCheck",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "uscc",
+            "description": "USCC (Unified Social Credit Code) Китайской компании. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false.",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyAffiliates/analytics": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Аналитика организаций, связанных с компанией (/api3/companyAffiliates/analytics)",
+        "operationId": "Api3CompanyAffiliatesAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. Актуальная связь - actual, историческая связь - historical, все связи - all. По умолчанию возвращаются все связи",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyAffiliates/egrDetails": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Расширенные сведения организаций, связанных с компанией (/api3/companyAffiliates/egrDetails)",
+        "operationId": "Api3CompanyAffiliatesEgrDetails",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. Актуальная связь - actual, историческая связь - historical, все связи - all. По умолчанию возвращаются все связи",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyAffiliates/listsMatches": {
+      "get": {
+        "tag": "Работа со списками веб-версии Фокуса",
+        "summary": "Списки, в которые входят связанные организации (/api3/companyAffiliates/listsMatches)",
+        "operationId": "Api3CompanyAffiliatesListsMatches",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyAffiliates/req": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Реквизиты организаций, связанных с компанией (/api3/companyAffiliates/req)",
+        "operationId": "Api3CompanyAffiliatesReq",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. Актуальная связь - actual, историческая связь - historical, все связи - all. По умолчанию возвращаются все связи",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyAffiliationsTypes": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Ближайшие связи компаний (/api3/companyAffiliationsTypes)",
+        "operationId": "Api3CompanyAffiliationsTypes",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первых 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. По умолчанию возвращаются только актуальные связи (Actual). Чтобы получить все связи — и актуальные, и исторические — укажите параметр All",
+            "type": "string",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyBankruptcy": {
+      "get": {
+        "tag": "Банкротство ЮЛ",
+        "summary": "Информация о банкротстве ЮЛ (/api3/companyBankruptcy)",
+        "operationId": "Api3CompanyBankruptcy",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первых 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/companyBankruptcyIntentions": {
+      "get": {
+        "tag": "Банкротство ЮЛ",
+        "summary": "Намерения подать заявление о признании должника несостоятельным (банкротом) (/api3/companyBankruptcyIntentions)",
+        "operationId": "Api3CompanyBankruptcyIntentions",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни сообщений параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и т.д. Если не указать параметр, то по умолчанию будет 0",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Если не указать парметр, то по умолчанию вернется 100 сообщений.",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/contactEmails": {
+      "get": {
+        "tag": "Контакты, сайты и торговые марки",
+        "summary": "Справочник адресов электронной почты (/api3/contactEmails)",
+        "operationId": "Api3ContactEmails",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/contacts": {
+      "get": {
+        "tag": "Контакты, сайты и торговые марки",
+        "summary": "Справочник телефонов (/api3/contacts)",
+        "operationId": "Api3Contacts",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/courtAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Оценка арбитражных дел и судов общей юрисдикции (/api3/courtAnalytics)",
+        "operationId": "Api3CourtAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/egrDetails": {
+      "get": {
+        "tag": "ФНС. Базовые реквизиты",
+        "summary": "Расширенные сведения на основе ЕГРЮЛ/ЕГРИП (/api3/egrDetails)",
+        "operationId": "Api3EgrDetails",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/egrDetails/mon": {
+      "get": {
+        "tag": "Наблюдение. Старая версия методов",
+        "summary": "Новости наблюдения (/api3/egrDetails/mon)",
+        "operationId": "Api3EgrDetailsMon",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "date",
+            "description": "Дата в формате ГГГГ-ММ-ДД",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/enterpriseSupport": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Сведения о получателях мер поддержки (/api3/enterpriseSupport)",
+        "operationId": "Api3EnterpriseSupport",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "true – получить данные в XML формате. По умолчанию = false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни записей параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Если не указать параметр, то по умолчанию вернется 100 записей",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/excerpt": {
+      "get": {
+        "tag": "ФНС. Базовые реквизиты",
+        "summary": "Выписка из ЕГРЮЛ/ЕГРИП (/api3/excerpt)",
+        "operationId": "Api3Excerpt",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/finan": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Финансовый анализ (/api3/finan)",
+        "operationId": "Api3Finan",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/financeAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Оценка по финансам и налогам (/api3/financeAnalytics)",
+        "operationId": "Api3FinanceAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/finanValues": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Автоматический финансовый анализ (/api3/finanValues)",
+        "operationId": "Api3FinanValues",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/fizBankr": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Банкротство физлиц (/api3/fizBankr)",
+        "operationId": "Api3FizBankr",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "q",
+            "description": "Поисковая строка",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "date",
+            "description": "Дата публикации",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/fnsBlockedBankAccounts": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Решения налоговых органов о приостановлении операций по счетам (/api3/fnsBlockedBankAccounts)",
+        "operationId": "Api3FnsBlockedBankAccounts",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/foreignRepresentatives": {
+      "get": {
+        "tag": "ФНС. Базовые реквизиты",
+        "summary": "Иностранные представительства и филиалы (/api3/foreignRepresentatives)",
+        "operationId": "Api3ForeignRepresentatives",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан НЗА",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "nza",
+            "description": "НЗА организации. Можно указать максимум 100 НЗА через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/foundersHistory": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "История владения организацией (/api3/foundersHistory)",
+        "operationId": "Api3FoundersHistory",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/fsa": {
+      "get": {
+        "tag": "Лицензии, сертификация и деятельность",
+        "summary": "Сертификаты и декларации соответствия (/api3/fsa)",
+        "operationId": "Api3Fsa",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей по сертификатам и декларациям, которые нужно пропустить от начала списка. Для получения первой 1000 сертификатов и деклараций параметр можно не указывать. Для получения второй 1000 необходимо указать skip=1000 и так далее",
+            "type": "integer",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/fssp": {
+      "get": {
+        "tag": "Судебная информация и исполнительные производства",
+        "summary": "Исполнительные производства (/api3/fssp)",
+        "operationId": "Api3Fssp",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 1000 исполнительных производств параметр можно не указывать. Для получения второй 1000 необходимо указать skip=1000 и так далее",
+            "type": "integer",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/fsspAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Оценка исполнительных производств (/api3/fsspAnalytics)",
+        "operationId": "Api3FsspAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/ftsDebtors": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Вхождение в перечень должников ФТС (/api3/ftsDebtors)",
+        "operationId": "Api3FtsDebtors",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/generalCourtCases": {
+      "get": {
+        "tag": "Судебная информация и исполнительные производства",
+        "summary": "Суды общей юрисдикции (/api3/generalCourtCases)",
+        "operationId": "Api3GeneralCourtCases",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "role",
+            "description": "Вид лица, участвующего в деле\\n\\nМожет принимать значения:\\n- `All` - В ответе вернутся дела со всеми возможными ролями, в которых участвовало проверяемое лицо\\n- `Defendant` - В ответе вернутся дела, в которых проверяемое лицо имеет роль \\\"ответчика\\\": ответчик/привлекаемое лицо/обвиняемый/подсудимый\\n- `Plaintiff` - В ответе вернутся дела в которых проверяемое лицо имеет роль \\\"истца\\\": истец/заявитель/взыскатель/подавший жалобу\\n- `Other` - В ответе вернутся дела в которых проверяемое лицо имеет роль \\\"Третье лицо\\\": другой/третье лицо/третья сторона\\n\\nПо умолчанию мы считаем `role=All`, если параметр не указан в запросе.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "type",
+            "description": "Тип дела (Вид судопроизводства)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 100 результатов параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/govPurchasesOfCustomer": {
+      "get": {
+        "tag": "Закупки и РНП",
+        "summary": "Госзакупки заказчика (/api3/govPurchasesOfCustomer)",
+        "operationId": "Api3GovPurchasesOfCustomer",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой тысячи закупок параметр можно не указывать. Для получения второй тысячи необходимо указать skip=1000 и так далее",
+            "type": "integer",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/govPurchasesOfParticipant": {
+      "get": {
+        "tag": "Закупки и РНП",
+        "summary": "Госзакупки участника (/api3/govPurchasesOfParticipant)",
+        "operationId": "Api3GovPurchasesOfParticipant",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой тысячи закупок параметр можно не указывать. Для получения второй тысячи необходимо указать skip=1000 и так далее",
+            "type": "integer",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/inspections": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Плановые и внеплановые проверки из ЕРП (/api3/inspections)",
+        "operationId": "Api3Inspections",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни проверок параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/kz/companyDetails": {
+      "get": {
+        "tag": "Базовые реквизиты компаний СНГ",
+        "summary": "Данные по компаниям Казахстана (/api3/kz/companyDetails)",
+        "operationId": "Api3KzCompanyDetails",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "bin",
+            "description": "БИН организации. Можно указать до 100 штук через запятую. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/legalAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Юридические признаки (/api3/legalAnalytics)",
+        "operationId": "Api3LegalAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/lessee": {
+      "get": {
+        "tag": "Лизинги и залоги",
+        "summary": "Договоры лизинга со стороны лизингополучателя (/api3/lessee)",
+        "operationId": "Api3Lessee",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/licences": {
+      "get": {
+        "tag": "Лицензии, сертификация и деятельность",
+        "summary": "Информация о лицензиях (/api3/licences)",
+        "operationId": "Api3Licences",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/licensedActivities": {
+      "get": {
+        "tag": "Лицензии, сертификация и деятельность",
+        "summary": "Лицензируемые виды деятельности (/api3/licensedActivities)",
+        "operationId": "Api3LicensedActivities",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/linkAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Оценка по связанным организациям (/api3/linkAnalytics)",
+        "operationId": "Api3LinkAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/lists": {
+      "get": {
+        "tag": "Работа со списками веб-версии Фокуса",
+        "summary": "Списки (/api3/lists)",
+        "operationId": "Api3Lists",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/lists/import": {
+      "post": {
+        "tag": "Работа со списками веб-версии Фокуса",
+        "summary": "Импорт списков (/api3/lists/import)",
+        "operationId": "Api3ListsImport",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "listid",
+            "description": "Id списка, в который нужно внести изменения. Id можно получить методом lists",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "orgs",
+            "description": "Список организаций",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "append",
+            "description": "При значении true, список будет дополнен указанными ИНН, а не перезаписан",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "asOrganizations",
+            "description": "При значении true, ИНН будут добавлены в список как юрлица",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "asPersons",
+            "description": "При значении true, ИНН будут добавлены в список как физлица",
+            "type": "boolean",
+            "default": false
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/listsMatches": {
+      "get": {
+        "tag": "Работа со списками веб-версии Фокуса",
+        "summary": "Списки организаций (/api3/listsMatches)",
+        "operationId": "Api3ListsMatches",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать max=100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать max=100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/monitoringGetAllChanges": {
+      "get": {
+        "tag": "NEW Наблюдение",
+        "summary": "Метод чтения изменений по всем компаниям ЕГРЮЛ/ЕГРИП (/api3/monitoringGetAllChanges)",
+        "operationId": "Api3MonitoringGetAllChanges",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение.\n             \n             Возможные значения:\n             - req\n             - egrDetails",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "changeId",
+            "description": "Идентификатор изменения.\n\nДля старта наблюдения нужно использовать **минимальное значения** `changeId`, из числа полученных `changeId` в ответе[метода полных состояний](https://developer.kontur.ru/doc/focus-v2/method?type=get&path=%2Fapi3%2FmonitoringALLGetStates).\n\nДля последовательного чтения изменений, нужно использовать **последний** `changeId` (максимальный по значению) из предыдущего непустого ответа метода чтения изменений.",
+            "type": "integer",
+            "default": null
+          },
+          {
+            "name": "getFirstChangesFromTTL",
+            "description": "Параметр получения всех известных изменений за последние 3 месяца (90 дней) по всем компаниям ЕГРЮЛ/ЕГРИП. Подробнее про параметр читайте выше в описании метода.",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "withoutDetails",
+            "description": "Параметр получения ответа без подробностей об изменениях. Подробнее про параметр читайте выше в описании метода.",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/monitoringGetAllStates": {
+      "get": {
+        "tag": "NEW Наблюдение",
+        "summary": "Метод чтения полных состояний по всем компаниям ЕГРЮЛ/ЕГРИП (/api3/monitoringGetAllStates)",
+        "operationId": "Api3MonitoringGetAllStates",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение. Возможные значения:\n- req\n- egrDetails",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/monitoringGetChanges": {
+      "get": {
+        "tag": "NEW Наблюдение",
+        "summary": "Метод чтения изменений по списку (/api3/monitoringGetChanges)",
+        "operationId": "Api3MonitoringGetChanges",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение.\n\n Возможные значения:\n - req\n - egrDetails\n  \n\tДля каждого доступного метода у вас задается свой список наблюдаемых компаний. Посмотреть и отредактировать ваши списки на наблюдении можно через HTTP-методы `api3/monitoringList`",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "changeId",
+            "description": "Идентификатор изменения.\n\nДля старта наблюдения нужно использовать **минимальное значения** `changeId`, из числа полученных `changeId` в ответе [метода полных состояний](https://developer.kontur.ru/doc/focus-v2/method?type=get&path=%2Fapi3%2FmonitoringGetStates).\n\nДля последовательного чтения изменений, нужно использовать **последний** `changeId`  (максимальный по значению) из предыдущего непустого ответа метода чтения изменений.",
+            "type": "integer",
+            "default": null
+          },
+          {
+            "name": "getFirstChangesFromTTL",
+            "description": "Параметр получения всех известных изменений за последние 3 месяца (90 дней) по компаниям вашего списка. Подробнее про параметр читайте выше в описании метода.",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "withoutDetails",
+            "description": "Параметр получения ответа без подробностей об изменениях. Подробнее про параметр читайте выше в описании метода.",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/monitoringGetStates": {
+      "get": {
+        "tag": "NEW Наблюдение",
+        "summary": "Метод чтения полных состояний по списку (/api3/monitoringGetStates)",
+        "operationId": "Api3MonitoringGetStates",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение. Возможные значения:\n - req\n - egrDetails\n  \n\tДля каждого доступного метода у вас задается свой список наблюдаемых компаний. Посмотреть и отредактировать ваши списки на наблюдении можно через HTTP-методы `api3/monitoringList`",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/monitoringList": {
+      "get": {
+        "tag": "NEW Наблюдение",
+        "summary": "Просмотр списка (/api3/monitoringList)",
+        "operationId": "Api3MonitoringList",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение. Возможные значения: req, egrDetails. Для каждого доступного метода у вас задается свой список наблюдаемых компаний. Посмотреть и отредактировать ваши списки на наблюдении можно через HTTP-методы api3/monitoringList",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": null
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Максимальное значение и значение по умолчанию равно 10 000. Для получения первых 10000 записей параметр можно не указывать. Для получения вторых 10000 необходимо указать take=10000 и так далее",
+            "type": "integer",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      },
+      "post": {
+        "tag": "NEW Наблюдение",
+        "summary": "Добавление компаний в список (/api3/monitoringList)",
+        "operationId": "Api3MonitoringListPost",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение. Возможные значения:\n- req\n- egrDetails\n            \nДля каждого доступного метода у вас задается свой список наблюдаемых компаний. Посмотреть и отредактировать ваши списки на наблюдении можно через\nHTTP-методы `api3/monitoringList`",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": true
+      },
+      "delete": {
+        "tag": "NEW Наблюдение",
+        "summary": "Удаление компаний из списка (/api3/monitoringList)",
+        "operationId": "Api3MonitoringListDelete",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "method",
+            "description": "Метод API Фокуса, по схеме которого нужно получить изменение. Возможные значения:\n - req\n - egrDetails\n \n\tДля каждого доступного метода у вас задается свой список наблюдаемых компаний. Посмотреть и отредактировать ваши списки на наблюдении можно через\n HTTP-методы `api3/monitoringList`",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "clearAllCompaniesFromList",
+            "description": "Параметр для полной очистки списка, т.е. для удаления всех компаний из списка на наблюдении",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": true
+      }
+    },
+    "/api3/monList": {
+      "get": {
+        "tag": "Наблюдение. Старая версия методов",
+        "summary": "Получить список организаций (/api3/monList)",
+        "operationId": "Api3MonList",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      },
+      "post": {
+        "tag": "Наблюдение. Старая версия методов",
+        "summary": "Указать список организаций (/api3/monList)",
+        "operationId": "Api3MonListPost",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "append",
+            "description": "Добавить организации в список наблюдения или перезаписать. True — дополнить содержимое списка, false — перезаписать список. Если параметр не указан, то по умолчанию будет false",
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "clientId",
+            "description": "",
+            "type": "string",
+            "default": "Undefined"
+          },
+          {
+            "name": "source",
+            "description": "",
+            "type": "string",
+            "default": "Undefined"
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/moratoriumOnBankruptcyCovid19": {
+      "get": {
+        "tag": "Банкротство ЮЛ",
+        "summary": "Мораторий на банкротство в связи с COVID-19 (/api3/moratoriumOnBankruptcyCovid19)",
+        "operationId": "Api3MoratoriumOnBankruptcyCovid19",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api)",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать max=100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать max=100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/onlineCashRegistersStatistics": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Статистика по онлайн-кассам (/api3/onlineCashRegistersStatistics)",
+        "operationId": "onlineCashRegisters",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/onlineCashRegistersTradePoints": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Информация о торговых точках с онлайн-кассами (/api3/onlineCashRegistersTradePoints)",
+        "operationId": "onlineCashRegistersTradePoints",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "pagingToken",
+            "description": "Токен пагинации. Указатель на следующий список элементов",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/pepSearch": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Поиск публичных должностных лиц (/api3/pepSearch)",
+        "operationId": "Api3PepSearch",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "fio",
+            "description": "ФИО человека. Можно указать ФИО полностью, либо только фамилию. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/personAffiliates/analytics": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Аналитика организаций, связанных с человеком (/api3/personAffiliates/analytics)",
+        "operationId": "Api3PersonAffiliatesAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "innfl",
+            "description": "ИНН физического лица. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. Актуальная связь - actual, историческая связь - historical, все связи - all. По умолчанию возвращаются все связи",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/personAffiliates/egrDetails": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Расширенные сведения организаций, связанных с человеком (/api3/personAffiliates/egrDetails)",
+        "operationId": "Api3PersonAffiliatesEgrDetails",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "innfl",
+            "description": "ИНН физического лица. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. Актуальная связь - actual, историческая связь - historical, все связи - all. По умолчанию возвращаются все связи",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/personAffiliates/listsMatches": {
+      "get": {
+        "tag": "Работа со списками веб-версии Фокуса",
+        "summary": "Списки, в которые были добавлены организации, связанные с человеком (/api3/personAffiliates/listsMatches)",
+        "operationId": "Api3PersonAffiliatesListsMatches",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "innfl",
+            "description": "ИНН физического лица",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/personAffiliates/req": {
+      "get": {
+        "tag": "Информация о связях",
+        "summary": "Реквизиты организаций, связанных с человеком (/api3/personAffiliates/req)",
+        "operationId": "Api3PersonAffiliatesReq",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "innfl",
+            "description": "ИНН физического лица. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "affiliationType",
+            "description": "Тип связи. Актуальная связь - actual, историческая связь - historical, все связи - all. По умолчанию возвращаются все связи",
+            "type": "string",
+            "default": 0
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/personBankruptcy": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Информация о банкротстве физлица (/api3/personBankruptcy)",
+        "operationId": "Api3PersonBankruptcy",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "innfl",
+            "description": "ИННФЛ. Можно указать либо ИННФЛ, либо ФИО с/без даты рождения",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "fio",
+            "description": "ФИО. Можно указать либо ИННФЛ, либо ФИО с/без даты рождения",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "birthDate",
+            "description": "Дата рождения в формате гггг-мм-дд или гггг",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/petitionersOfArbitration": {
+      "get": {
+        "tag": "Судебная информация и исполнительные производства",
+        "summary": "Статистика по истцам в арбитраже (/api3/petitionersOfArbitration)",
+        "operationId": "Api3PetitionersOfArbitration",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни истцов параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/pledger": {
+      "get": {
+        "tag": "Лизинги и залоги",
+        "summary": "Залоги движимого имущества со стороны залогодателя (/api3/pledger)",
+        "operationId": "Api3Pledger",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/purchasesAnalytics": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Оценка по госзакупкам и вхождение в РНП (/api3/purchasesAnalytics)",
+        "operationId": "Api3PurchasesAnalytics",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/req": {
+      "get": {
+        "tag": "ФНС. Базовые реквизиты",
+        "summary": "Базовые реквизиты (/api3/req)",
+        "operationId": "Api3Req",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/req/mon": {
+      "get": {
+        "tag": "Наблюдение. Старая версия методов",
+        "summary": "Новости наблюдения (/api3/req/mon)",
+        "operationId": "Api3ReqMon",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "date",
+            "description": "Дата в формате ГГГГ-ММ-ДД. Обязательный параметр",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/rnpDetails": {
+      "get": {
+        "tag": "Закупки и РНП",
+        "summary": "Реестр недобросовестных поставщиков (/api3/rnpDetails)",
+        "operationId": "Api3Rnp",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/sanctionedPersons": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Вхождение физлица в санкционные списки (/api3/sanctionedPersons)",
+        "operationId": "Api3SanctionedPersons",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "fio",
+            "description": "ФИО. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/scoring": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Скоринговая оценка (/api3/scoring)",
+        "operationId": "Api3Scoring",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Можно указать максимум 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Можно указать максимум 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/seamlessLoginToken": {
+      "get": {
+        "tag": "Комбинированный тариф. Доступ в веб Фокуса",
+        "summary": "Получение токена для входа (/api3/seamlessLoginToken)",
+        "operationId": "Api3SeamlessLoginToken",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "take",
+            "description": "Количество возвращаемых токенов в ответе",
+            "type": "integer",
+            "default": 1
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api2/search": {
+      "get": {
+        "tag": "Поиск компаний",
+        "summary": "Поисковая строка (/api2/search)",
+        "operationId": "Api2Search",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "q",
+            "description": "Поисковой запрос",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "region",
+            "description": "Код региона. Для использования фильтрации по региону. Возможные занчения: 01-99",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "page",
+            "description": "Номер возвращаемой страницы. На одной странице возвращается не более 10 результатов поиска. Если параметр page отсутствует, то считается, что page=1. Максимально допустимое количество страниц — 50",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/selectionByRegDate": {
+      "get": {
+        "tag": "Поиск компаний",
+        "summary": "Поиск новых компаний (/api3/selectionByRegDate)",
+        "operationId": "Api3SelectionByRegDate",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "date",
+            "description": "Дата в формате «ГГГГ-ММ-ДД». Допустимо указывать дату в пределах 30 дней от сегодняшнего дня. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/sites": {
+      "get": {
+        "tag": "Контакты, сайты и торговые марки",
+        "summary": "Сайты, привязанные к компании (/api3/sites)",
+        "operationId": "Api3Sites",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/smzGetStatus": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Проверка статуса самозанятого (/api3/smzGetStatus)",
+        "operationId": "Api3SmzGetStatus",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "guid",
+            "description": "Идентификатор в формате GUID. Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/smzSendToCheck": {
+      "get": {
+        "tag": "Данные для проверки физических лиц",
+        "summary": "Регистрация задачи на проверку статуса самозанятого (/api3/smzSendToCheck)",
+        "operationId": "Api3SmzSendToCheck",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "innfls",
+            "description": "ИНН ФЛ. Максимально можно указать 100 ИНН через запятую. Обязательный параметр",
+            "type": "array",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/stat": {
+      "get": {
+        "tag": "Сервисные методы",
+        "summary": "Статистика использования методов API (/api3/stat)",
+        "operationId": "Api3Stat",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Можно указать только первые 20 символов ключа (префикс), кроме тех ключей, которые были сгенерированы в личном кабинете Фокус.API",
+            "type": "string",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/submittedStatements": {
+      "get": {
+        "tag": "ФНС. Базовые реквизиты",
+        "summary": "Поданные заявления на государственную регистрацию изменений в ЕГРЮЛ/ЕГРИП (/api3/submittedStatements)",
+        "operationId": "",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api?from=kf-api-doc). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни записей параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/suggest": {
+      "get": {
+        "tag": "Поиск компаний",
+        "summary": "Поисковые подсказки (/api3/suggest)",
+        "operationId": "Api3Suggest",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "q",
+            "description": "Поисковой запрос",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/taxes": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Уплаченные налоги и сборы (/api3/taxes)",
+        "operationId": "Api3Taxes",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/taxFigures": {
+      "get": {
+        "tag": "Финансы и налоги",
+        "summary": "Налоговые показатели (/api3/taxFigures)",
+        "operationId": "Api3TaxFigures",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/trademarks": {
+      "get": {
+        "tag": "Контакты, сайты и торговые марки",
+        "summary": "Товарные знаки (/api3/trademarks)",
+        "operationId": "Api3Trademarks",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Максимально можно указать 100 ОГРН через запятую. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Максимально можно указать 100 ИНН через запятую. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни результатов параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          }
+        ],
+        "hasBody": false
+      }
+    },
+    "/api3/unifiedInspections": {
+      "get": {
+        "tag": "Аналитика и оценка компаний",
+        "summary": "Плановые и внеплановые проверки по данным ФГИС ЕРКНМ (/api3/unifiedInspections)",
+        "operationId": "Api3UnifiedInspections",
+        "parameters": [
+          {
+            "name": "key",
+            "description": "Ключ доступа. Тестовый ключ можно получить через [заявку](https://focus.kontur.ru/site/api/order-api). Обязательный параметр.",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "ogrn",
+            "description": "ОГРН организации. Обязательный параметр, если не указан ИНН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "inn",
+            "description": "ИНН организации. Обязательный параметр, если не указан ОГРН",
+            "type": "string",
+            "default": null
+          },
+          {
+            "name": "xml",
+            "description": "При значении true возвращает ответ в формате xml. Значение по умолчанию: false",
+            "type": "boolean",
+            "default": null
+          },
+          {
+            "name": "skip",
+            "description": "Количество записей, которые нужно пропустить от начала списка. Для получения первой сотни проверок параметр можно не указывать. Для получения второй сотни необходимо указать skip=100 и так далее",
+            "type": "integer",
+            "default": 0
+          },
+          {
+            "name": "take",
+            "description": "Количество записей, которых нужно вернуть в ответе. Для получения первой 100 записей параметр можно не указывать. Для получения второй 100 необходимо указать take=100 и так далее",
+            "type": "integer",
+            "default": 100
+          }
+        ],
+        "hasBody": false
+      }
+    }
+  }
+}
