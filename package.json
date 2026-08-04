@@ -10,9 +10,16 @@
     "контрагенты"
   ],
   "license": "MIT",
-  "homepage": "https://developer.kontur.ru/doc/focus-v2",
+  "homepage": "https://github.com/alexbruin/n8n-nodes-konturfocus",
   "author": {
     "name": "avl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbruin/n8n-nodes-konturfocus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexbruin/n8n-nodes-konturfocus/issues"
   },
   "main": "index.js",
   "scripts": {
